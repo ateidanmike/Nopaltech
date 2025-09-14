@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nopal Tech Solars - Powering Tomorrow with Clean Energy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 
+        PLACEHOLDER REPLACEMENT INSTRUCTIONS:
+        1. Replace logo.png with your actual logo file
+        2. Update contact information (phone, email, address)
+        3. Replace social media links with actual URLs
+        4. Add real project images and testimonials
+        5. Update Google Maps embed with actual location
+        6. Replace placeholder images with professional photos
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2E7D32;
+            --solar-yellow: #FBC02D;
+            --white: #FFFFFF;
+            --dark-grey: #212121;
+            --light-grey: #F5F5F5;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-grey);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--solar-yellow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.8), rgba(251, 192, 45, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23E3F2FD" width="1200" height="600"/><g fill="%23FBC02D" opacity="0.3"><circle cx="200" cy="100" r="20"/><circle cx="400" cy="150" r="15"/><circle cx="800" cy="80" r="25"/><circle cx="1000" cy="120" r="18"/></g><rect fill="%232E7D32" x="100" y="400" width="200" height="100" rx="10"/><rect fill="%232E7D32" x="350" y="350" width="180" height="120" rx="10"/><rect fill="%232E7D32" x="600" y="380" width="220" height="110" rx="10"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--solar-yellow);
+            color: var(--dark-grey);
+        }
+
+        .btn-primary:hover {
+            background: #F9A825;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(251, 192, 45, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: var(--light-grey);
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 48px;
+        }
+
+        .about-text h3 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--solar-yellow);
+            margin-bottom: 10px;
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--light-grey);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-card i {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+
+        /* How It Works */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: -10px;
+            width: 20px;
+            height: 2px;
+            background: var(--solar-yellow);
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .step h3 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: var(--light-grey);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-card {
+            background: linear-gradient(135deg, var(--primary-green), var(--solar-yellow));
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .advantage-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            background: var(--light-grey);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .project-results {
+            background: var(--solar-yellow);
+            color: var(--dark-grey);
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .testimonials .section-title {
+            color: var(--white);
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+
+        .testimonial {
+            min-width: 350px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--solar-yellow);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-grey);
+            font-size: 1.5rem;
+        }
+
+        /* Quote Form */
+        .quote-form {
+            background: var(--light-grey);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .success-message {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: var(--solar-yellow);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--solar-yellow);
+            color: var(--dark-grey);
+        }
+
+        .map-container {
+            height: 300px;
+            background: var(--light-grey);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--solar-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .process-steps {
+                flex-direction: column;
+            }
+
+            .step::after {
+                display: none;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .testimonial {
+                min-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-solar-panel"></i>
+                Nopal Tech Solars
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Powering Kenya with Smart, Clean Solar Solutions</h1>
+            <p>Affordable energy for homes, farms, and businesses across East Africa</p>
+            <div class="hero-buttons">
+                <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+                <a href="#products" class="btn btn-secondary">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="about-text">
+                    <h3>Kenyan-owned & operated solar energy company</h3>
+                    <p><strong>Mission:</strong> To provide affordable, reliable, and sustainable solar power across Africa.</p>
+                    <p>We specialize in off-grid systems, grid-tie solutions, solar water pumping, street lighting, and comprehensive maintenance services. Our expert team delivers custom solar solutions that reduce energy costs while supporting environmental sustainability.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Reliability</h4>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-coins"></i>
+                            <h4>Affordability</h4>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Sustainability</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section products">
+        <div class="container">
+            <h2 class="section-title">Products & Solutions</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <i class="fas fa-solar-panel"></i>
+                    <h3>Solar Panels & Mounting</h3>
+                    <p>High-efficiency solar panels with durable mounting systems designed for Kenya's climate conditions.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>Inverters & Battery Storage</h3>
+                    <p>Smart inverters and reliable battery storage solutions for continuous power supply.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Solar Water Pumps</h3>
+                    <p>Efficient solar-powered water pumping systems for irrigation and domestic use.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Solar Street Lighting</h3>
+                    <p>Complete street lighting solutions with smart controls and long-lasting LED fixtures.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-suitcase"></i>
+                    <h3>Portable Solar Kits</h3>
+                    <p>Compact, portable solar systems perfect for remote locations and emergency power.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Service & Maintenance</h3>
+                    <p>Professional installation, monitoring, and maintenance services for optimal system performance.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We assess your energy needs and site conditions to design the perfect solar solution.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our engineers create a tailored solar system plan optimized for your specific requirements.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Installation</h3>
+                    <p>Professional setup by our certified engineers ensures safe and efficient system deployment.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Monitoring</h3>
+                    <p>Smart tracking technology monitors system performance and alerts us to any issues.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Support</h3>
+                    <p>Ongoing service and maintenance ensures your system operates at peak efficiency for years.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="section why-us">
+        <div class="container">
+            <h2 class="section-title">The Nopal Tech Advantage</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Affordable Financing</h3>
+                    <p>Flexible payment plans and financing options make solar accessible to everyone.</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certified Equipment</h3>
+                    <p>High-quality, internationally certified components with comprehensive warranties.</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Expert Installers</h3>
+                    <p>Skilled Kenyan engineers and technicians with extensive solar installation experience.</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Reliable Support</h3>
+                    <p>24/7 customer support and rapid response maintenance services.</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h3>Remote Monitoring</h3>
+                    <p>Advanced monitoring technology tracks system performance in real-time.</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Sustainability Focus</h3>
+                    <p>Committed to environmental protection and sustainable energy solutions for Africa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Rural Irrigation System</h3>
+                        <p>Implemented solar-powered irrigation systems across 50 farms in central Kenya, increasing crop yields and reducing operational costs.</p>
+                        <div class="project-results">
+                            Results: 60% reduction in irrigation costs, 40% increase in crop yields
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Commercial Rooftop Solar</h3>
+                        <p>Installed a 200kW rooftop solar system for a manufacturing facility, providing clean energy and significant cost savings.</p>
+                        <div class="project-results">
+                            Results: 40% reduction in electricity bills, 300 tons CO2 saved annually
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Solar Street Lighting</h3>
+                        <p>Illuminated 5 kilometers of rural roads with solar-powered LED street lights, improving safety and community connectivity.</p>
+                        <div class="project-results">
+                            Results: 100% renewable lighting, 80% reduction in crime incidents
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-primary">See More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Sarah Wanjiku</h4>
+                    <p>Farm Owner, Nakuru</p>
+                    <blockquote>"Nopal Tech Solars transformed our farm operations. The solar water pump has been running flawlessly for 2 years, saving us thousands in diesel costs."</blockquote>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
